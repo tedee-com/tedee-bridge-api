@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Tedee API 1.30",
+    "title": "Tedee Local API",
     "description": "<a href=\"https://tedee.b2clogin.com/tedee.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_Portal_Signup_Signin_With_Kmsi&client_id=02106b82-0524-4fd3-ac57-af774f340979&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login\" target=\"_blank\">Login Page</a><br /><a href=\"https://tedee-tedee-api-doc.readthedocs-hosted.com/en/latest/\" target=\"_blank\">API Documentation</a>",
     "version": "1.30"
   },

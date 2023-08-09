@@ -3117,6 +3117,9 @@
         ],
         "summary": "Get Gate with entered id.",
         "operationId": "GetGate",
+        "description": {
+          "$ref": "gate/get-single-gate.md"
+        },
         "parameters": [
           {
             "name": "id",

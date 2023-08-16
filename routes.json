@@ -1,0 +1,4 @@
+{
+  "route": "/bridge-api",
+  "serve": "/index.html"
+}

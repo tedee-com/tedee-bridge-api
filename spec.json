@@ -29,11 +29,33 @@
     {
       "name": "Callback",
       "description": "Everything about callback servers (webhooks)"
-    }
-    ,
+    },
     {
       "name": "Events",
       "description": "NOTE: This section describes requests sent from Tedee Bridge to predefined callback servers (webhooks) when an asynchronous event occures"
+    },
+    {
+      "name": "Authenticate",
+      "description": {
+        "$ref" : "how-to/authenticate.md"
+      }
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "How to?",
+      "tags": [
+        "Authenticate"
+      ]
+    },
+    {
+      "name": "Endpoints",
+      "tags": [
+        "Bridge",
+        "Lock",
+        "Callback",
+        "Events"
+      ]
     }
   ],
   "paths": {

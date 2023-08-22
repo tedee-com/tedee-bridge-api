@@ -1,6 +1,6 @@
 This section describes how to authenticate. You must authenticate to make requests to the API.
 
-## Step 1: Obtain an API Key
+## Step 1: Obtain an API Key for demo purposes
 
 Before making an authenticated request, you must first obtain an API key. Register on our platform [here](#link-to-registration-page) to get your personal API key.
 

@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "route": "/bridge-api",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/",
+      "redirect" : "/bridge-api"
+    }
+  ]
+}

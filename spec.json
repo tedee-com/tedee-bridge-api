@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Tedee Local API 1.0",
+    "title": "Tedee Bridge API 1.0",
     "description": "This API can be used with Tedee Bridge. Endpoints described bellow allows to perform key actions such as:\n- Open and Close the door lock \n- Open with (or without) Pull Spring,\n- Get the detailed info about each Tedee Lock paired with Bridge.\n- Manage callback servers (webhook) and more.",
     "contact": {
       "email": "support@tedee.com"

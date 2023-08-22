@@ -2,8 +2,11 @@
   "routes": [
     {
       "route": "/bridge-api",
-      "serve": "/index.html",
-      "statusCode": 200
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/",
+      "redirect" : "/bridge-api"
     }
   ]
 }

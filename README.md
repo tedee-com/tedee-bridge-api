@@ -1,4 +1,4 @@
-# Manu rector amantibus siquis ditia et firmat
+# Tedee Bridge Local API Documentation
 
 ## Iam et quotiens apte quas
 

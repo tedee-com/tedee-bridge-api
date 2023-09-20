@@ -1,46 +1,32 @@
-This section describes how to authenticate. You must authenticate to make requests to the API.
+You must authenticate to make requests to the API.  
+Tedee Bridge API uses 2 types of API tokens:
 
-## Step 1: Obtain an API Key
+## Token type: plain
+the token can be taken from the Tedee App -> Bridge Settings and copied directly to the value field below.  
+**NOTE! Use this type of token for development purposes only!!!**  
+An example token looks like this:
 
-Before making an authenticated request, you must first obtain an API key. Register on our platform [here](#link-to-registration-page) to get your personal API key.
+	BE9xnPnGfVUS
 
-## Step 2: Generating a JWT Token
+## Token type: secure
+the token needs to be calculated for each request independantly based on the token taken from the Tedee App and the timestamp.
 
-Use your API key to request a JWT token. Send a POST request to our authentication endpoint:
+The calculation formula is as follows:  
+1. Prepare the string that concatenates two factors: Token from the Tedee App and the timestamp (epoch time in milliseconds).  
+Example: 
+	
+		BE9xnPnGfVUS1691058833000
 
-```
-POST /api/authenticate
-Headers:
-Content-Type: application/json
-Body:
-{
-"apiKey": "YOUR_API_KEY"
-}
-```
+2. Calculate hash (SHA256) from the prepared string.  
+Example:
+	
+		e59d9763edc6e59f2faccf9a769e5cf170d68439c3fd67afae5e3e72d0463a71
 
-The response will include your JWT token:
+3. Prepare another string that concatenates received hash and the timestamp (the same value used in hash calculation).  
+Example:
+	
+		e59d9763edc6e59f2faccf9a769e5cf170d68439c3fd67afae5e3e72d0463a711691058833000
 
-```json
-{
-"token": "YOUR_JWT_TOKEN"
-}
-```
-
-## Step 3: Making Authenticated Requests
-
-Include your JWT token in the `Authorization` header for subsequent API requests:
-
-```
-GET /api/resource
-Headers:
-Authorization: Bearer YOUR_JWT_TOKEN
-```
-
-## Token Expiry
-
-JWT tokens expire after 24 hours. Once a token is expired, you'll need to generate a new one using your API key. It's a good practice to handle token expiry gracefully in your application, ensuring you always use a valid token for your requests.
-
-## Handling Errors
-
-If you use an invalid token or your token has expired, you will receive a `401 Unauthorized` response. In this case, re-authenticate to obtain a new JWT token.
-
+Use the calculated string as the ``api_token`` value.  
+  
+Please note that the token timestamp is validated by the Tedee Bridge and the value used for each request must be greater than the previous one.

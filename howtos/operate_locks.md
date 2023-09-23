@@ -1,7 +1,7 @@
 In this section let's focus on how to operate tedee locks.  
 To operate a lock via Local API you need to be an administrator of the Tedee Bridge the lock is paired with.
 
-<!--//TODO - administrator?-->
+<!--//TODO - admin?-->
 
 What you need is the ``device_id`` of the lock.
 

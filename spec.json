@@ -85,6 +85,12 @@
       "description": {
         "$ref" : "webhooks/events.md"
       }
+    },
+    {
+      "name": "Useful links",
+      "description": {
+        "$ref" : "more.md"
+      }
     }
   ],
   "x-tagGroups": [
@@ -120,6 +126,12 @@
       "tags": [
         "About webhooks",
         "Webhook events"
+      ]
+    },
+    {
+      "name": "MORE",
+      "tags": [
+        "Useful links"
       ]
     }
   ],

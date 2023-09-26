@@ -1,46 +1,111 @@
-This section describes how to authenticate. You must authenticate to make requests to the API.
+Every request requires authentication token.
+The process of using/generating the authentication token is described below.  
+  
+Bare in mind there are **two types** of Authentication Tokens:
+1. **Encrypted** - used as default
+2. **Plain** - unsecured, which must be used <span style="color:red">**for development purposes only!**</span> and never in production environment.
 
-## Step 1: Obtain an API Key
+The type of token used by the Local API can be selected via the mobile app:
 
-Before making an authenticated request, you must first obtain an API key. Register on our platform [here](#link-to-registration-page) to get your personal API key.
+![Selecting API Token type](/howtos/images/token_plain.png "Selecting API Token type")  
 
-## Step 2: Generating a JWT Token
+Depends on the selected type of API token, a relevant ``api_key`` value must be generated and passed as a query or header parameter.  
+See [Overview: Enabling Local API and authentication](/#tag/Getting-started/Enabling-Local-API-and-authentication) for details.
 
-Use your API key to request a JWT token. Send a POST request to our authentication endpoint:
+## Encrypted Token
+This type of token provides sufficient security level to the system:
+* every request (with a given ``api_key``) can be processed only once due to timestamp value embedded in the ``api_key`` value
+* every request will have different ``api_key`` value, effectively, the entire request string will be different
+* the internal token string (obtained from the Local API settings page) will never be revealed
 
-```
-POST /api/authenticate
-Headers:
-Content-Type: application/json
-Body:
-{
-"apiKey": "YOUR_API_KEY"
-}
-```
+The ``api_key`` value needs to be calculated independantly for every request, based on:
+* **token string** - taken from the Local API settings page
+* **timestamp** - a current date & time as a "big" integer value in milliseconds (also known as: epoch time)
 
-The response will include your JWT token:
+The formula pattern to get the ``api_key`` value is:
 
-```json
-{
-"token": "YOUR_JWT_TOKEN"
-}
-```
+	api_key = SHA256(token + timestamp) + timestamp
 
-## Step 3: Making Authenticated Requests
+### For example:  
+Let's say the Token string (obtained from Local API settings page) is: 
+	
+	BE9xnPnGfVUS
+... and the current "epoch" time in milliseconds is:
 
-Include your JWT token in the `Authorization` header for subsequent API requests:
+	1691058833000
 
-```
-GET /api/resource
-Headers:
-Authorization: Bearer YOUR_JWT_TOKEN
-```
 
-## Token Expiry
+1. Concatenate two above values as strings:
 
-JWT tokens expire after 24 hours. Once a token is expired, you'll need to generate a new one using your API key. It's a good practice to handle token expiry gracefully in your application, ensuring you always use a valid token for your requests.
+		BE9xnPnGfVUS1691058833000
 
-## Handling Errors
+2. Calculate hash (SHA256) for the above string
+	
+		e59d9763edc6e59f2faccf9a769e5cf170d68439c3fd67afae5e3e72d0463a71
+	
+3. Append "epoch" time:
 
-If you use an invalid token or your token has expired, you will receive a `401 Unauthorized` response. In this case, re-authenticate to obtain a new JWT token.
+		e59d9763edc6e59f2faccf9a769e5cf170d68439c3fd67afae5e3e72d0463a711691058833000
 
+4. Done!  
+The last string you received is your ``api_key`` value.  
+To make sure everything works, try to use it in [Postman](https://www.postman.com) as described here: [Overview: Enabling Local API and authentication](/#tag/Getting-started/Enabling-Local-API-and-authentication)
+
+
+
+## Plain Token
+This type of token **does not** provide sufficient security level to the system and can be used <span style="color:red">**for development purposes only!**</span>:
+* the internal token string (obtained from the Local API settings page) **will be revealed!**
+* every request of the same kind will look the same and can be processed **mutiple of times**
+* malcious software or user can take control of the Locks by sniffing the traffic in the local network
+
+The ``api_key`` value for this token type is just the token string (taken from the Local API settings page)
+
+### For example:  
+Let's say the Token string (obtained from Local API settings page) is: 
+
+	BE9xnPnGfVUS
+
+...the ``api_key`` value is also
+
+	BE9xnPnGfVUS
+
+
+## Postman Automation
+For testing purposes, [Postman](https://www.postman.com) can be configured to use both types of tokens (Encrypted and Plain) by adding several scripts and variables in the relevant places.  
+Follow the steps described below if you want to do so.
+
+1. Go to Environments -> Globals and add 3 variables:  
+
+![Set Postman global variables](/howtos/images/postman_auto_globals.png "Set Postman global variables")
+- **API_TOKEN** - set the current value with the token string obtained from Local API settings page. For example:
+
+		BE9xnPnGfVUS
+
+- **API_TOKEN_MODE** - set the current value as ``PLAIN`` or ``ENCRYPTED`` - depending on the mode you want to use. For example:
+
+		ENCRYPTED
+
+- **SECURE_TOKEN_SCRIPT** - set the current value with the script text:
+
+		if (pm.globals.get("API_TOKEN_MODE")=="ENCRYPTED") {
+		    var token = pm.globals.get("API_TOKEN");
+		    var timestamp = pm.variables.replaceIn('{{$timestamp}}')+"000";
+		    var hash = CryptoJS.SHA256(token+timestamp).toString();
+		    pm.globals.set("API_KEY", hash+timestamp);
+		    console.log("Set variable API_KEY: " + pm.globals.get("API_KEY") + " (original token: " + token + " timestamp: " + timestamp + " sha256: " + hash + ")");
+		};
+2. Go to a selected endpoint -> Pre-request script tab and enter the following line:
+	![Set Pre-request script](/howtos/images/postman_auto_pre.png "Set Pre-request script")	
+
+		eval(pm.globals.get('SECURE_TOKEN_SCRIPT'));
+	
+3. Go to a selected endpoint -> Authorization tab and enter "{{API_KEY}}" into the value text field as shown below:
+	![Set api_key value](/howtos/images/postman_auto_auth.png "Set api_key value")	
+
+4. Done.  
+	Now you can send requests with encrypted token mode without the need of manual calculation every time!
+	
+### Note!
+Bare in mind that every time you change the token type on the Local API settings page you must change the **API_TOKEN_MODE** current value accordingly.  
+Also, make sure you use the recent token string in the **API_TOKEN** urrent value field as well.

@@ -4,7 +4,8 @@
     "title": "Tedee Local API",
     "description": "This API can be used with Tedee Bridge. Endpoints described bellow allows to perform key actions such as:\n- Open and Close the door lock \n- Open with (or without) Pull Spring,\n- Get the detailed info about each Tedee Lock paired with Bridge.\n- Manage callback servers (webhook) and more.",
     "contact": {
-      "email": "support@tedee.com"
+      "email": "support@tedee.com",
+      "name": "us"
     },
     "version": "1.2"
   },
@@ -875,28 +876,18 @@
               1
             ]
           },
-          "softwareVersions": {
-            "type": "array",
-            "items": 
-              {"$ref": "#/components/schemas/BridgeInfoVersion"}
-          }
-        }
-      },
-      "BridgeInfoVersion": {
-        "type": "object",
-        "properties": {
-          "softwareType": {
-            "type": "integer",
-            "enum": [0,1],
-            "description": "0 - Bridge Firmware, 1 - WiFi Module Firmware",
-            "examples": [
-              0
-            ]
-          },
           "version": {
             "type": "string",
+            "description": "Bridge Firmware version",
             "examples": [
               "2.2.11098"
+            ]
+          },
+          "wifiVersion": {
+            "type": "string",
+            "description": "WiFi Module Firmware version",
+            "examples": [
+              "35.2.2.4"
             ]
           }
         }

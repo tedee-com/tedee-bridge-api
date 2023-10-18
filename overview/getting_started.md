@@ -1,35 +1,32 @@
-Tedee's Local API exposes resources that enable you to work with your devices. By calling relevant endpoint user is able, among others, to manipulate lock, get battery level or read it's details.  
-This guide aims to help you to get started with Tedee's Local API.  
+Welcome to the Tedee Bridge API, specifically designed to operate within your local network. Here are some key points to get you started:
 
-## What you need?
+- **Local Network:** The API functions over your local network, allowing your integrations to communicate directly with the Tedee Bridge without requiring external internet access for the API calls.
 
-Starting working with the API doesn't require much prerequisites.  
-You'll need:
+- **Initial Setup:** To get started, you'll need a Tedee Bridge connected to your local network. Importantly, the bridge must have internet access to obtain and periodically refresh an access certificate for paired devices.
 
-* REST API client - [Postman](https://www.postman.com) - is a great example here
+- **Device Pairing:** Make sure you have at least one Tedee Lock paired with the bridge to control it via the API.
 
-## Enabling Local API and authentication
+- **Callbacks:** The Tedee Bridge API offers callbacks to keep your integration updated on device status changes or other important events.
 
-Before you can use the API you must enable the Local API. This can be done using the mobile tedee app.  
-Go to selected Bridge -> Settings -> Local API -> then toggle the switch button.  
+- **Rate Limiting:** Be mindful of the rate at which you send requests; sending them too quickly can adversely affect performance.
+
+## Enabling Bridge API
+
+Before you can use the API you must enable it on the Bridge using Tedee mobile application. Open Tedee app and go to selected Bridge -> Settings -> Local API -> then toggle the switch button.  
 
 ![Enabling Local API in the mobile app](/overview/images/enable_api.png "Enabling Local API in the mobile app")  
 
+Available options:
 
-Every request requires authentication token.  
-The process of using/generating the authentication token is described in the dedicated section [How to: Authenticate](/#tag/Authenticate).  
+- **Encrypted Token:** Allows you to toggle between secure and insecure authentication methods. For more details, refer to the [Authentication](/#tag/authenticate) section.
   
-Bare in mind there are **two types** of Authentication Token described in the above section:
-1. Encrypted
-2. Plain - which must be used for **development purposes only!**
-  
-Once you've got the access token you can use [Postman](https://www.postman.com) to make authenticated requests.  
-To do this, open Postman and go to Authorization tab. 
+- **Token:** This is the actual token that must be included in every API request for authentication, functioning similarly to a password, so keep it secure.
 
-![Authentication with Postman](/overview/images/postman_token.png "Authentication with Postman")  
+- **IP Address:** Indicates the local network address of the Tedee Bridge where the API will be accessible.
 
-In ``Type`` dropdown select **API Key** and in ``Value`` input field put your access token.  
-From now on, our requests should be authenticated.
+- **Port:** Specifies the port number on the Tedee Bridge where the API can be accessed.
+
+- **Try it Now:** Opens the Swagger page for the Tedee Bridge, allowing you to test the API directly from your web browser.
 
 ## REST API request
 
@@ -43,8 +40,7 @@ All Tedee Local API requests use the following URL format:
 
 ``http://{bridge IP}/{version}/{resource}`` 
 
-* **bridge IP** - The IP address of the Tedee Bridge in the local network. It can be obtained from the Local API settings screen in the mobile app:
-![Bridge IP address](/overview/images/bridge_ip.png "Bridge IP address")
+* **bridge IP** - The IP address of the Tedee Bridge in the local network. It can be obtained from the mobile app
 * **version** - we use [Overview: API versioning](/#tag/API-versioning) to deliver new functionalities more easily, keeping backwards compatibility
 * **resource** - path to the resource you want to manipulate
 
@@ -59,102 +55,17 @@ Some requests require additional meta data sent in the headers, which helps to p
 
 Tedee Local API is based on REST architecture. This implies that the application does not store any state.  
 Hence, the client session can not be handled on the server (Bridge) side, every request must provide all the information needed.  
-All requests that starts with ``/bridge/`` referes to Bridge resources. Requests starts with ``/lock/`` referes to Lock resources and ``callback`` to the webhooks/callback management.
 
 ### Example request
 
 Let's get some information about our devices now.
-Put this address ``http://192.168.1.25/v1.0/lock`` in the `url` input and click **Send**.
+Put this address ``http://192.168.1.25/v1.0/bridge`` in the `url` input and click **Send**.
 
-	GET /v1.0/lock?api_token=<<token>> HTTP/1.1
-
-You should receive response with all your devices. For example:
-
-	[
-	    {
-	        "type": 2,
-	        "id": 35800,
-	        "name": "Lock9A25",
-	        "serialNumber": "19500203-000005",
-	        "isConnected": 0,
-	        "rssi": 0,
-	        "deviceRevision": 3,
-	        "version": "2.4.9961",
-	        "state": 0,
-	        "jammed": 0,
-	        "batteryLevel": 255,
-	        "isCharging": 0,
-	        "deviceSettings": {
-	            "autoLockEnabled": 0,
-	            "autoLockDelay": 60,
-	            "autoLockImplicitEnabled": 0,
-	            "autoLockImplicitDelay": 5,
-	            "pullSpringEnabled": 0,
-	            "pullSpringDuration": 5,
-	            "autoPullSpringEnabled": 0,
-	            "postponedLockEnabled": 1,
-	            "postponedLockDelay": 5,
-	            "buttonLockEnabled": 1,
-	            "buttonUnlockEnabled": 1
-	        }
-	    },
-	    {
-	        "type": 4,
-	        "id": 38740,
-	        "name": "GO-06B2",
-	        "serialNumber": "22510401-000050",
-	        "isConnected": 0,
-	        "rssi": 0,
-	        "deviceRevision": 3,
-	        "version": "2.0.13321",
-	        "state": 0,
-	        "jammed": 0,
-	        "batteryLevel": 255,
-	        "isCharging": 0,
-	        "deviceSettings": {
-	            "autoLockEnabled": 0,
-	            "autoLockDelay": 60,
-	            "autoLockImplicitEnabled": 0,
-	            "autoLockImplicitDelay": 5,
-	            "pullSpringEnabled": 1,
-	            "pullSpringDuration": 2,
-	            "autoPullSpringEnabled": 0,
-	            "postponedLockEnabled": 1,
-	            "postponedLockDelay": 5,
-	            "buttonLockEnabled": 1,
-	            "buttonUnlockEnabled": 1
-	        }
-	    }
-	]
+	GET /v1.0/bridge?api_token=<<token>> HTTP/1.1
 	
 ## REST API Response
 
-### Response HTTP code
-
-Each response contains an HTTP code that informs about the status of the request processing.  
-Tedee Local API uses standard [HTTP status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  
-
-### Response message body
-
-If and endpoint returns any data it is always in the JSON format. For example:
-
-	{
-	    "name": "My Bridge",
-	    "currentTime": "2023-09-23T14:54:54.918Z",
-	    "serialNumber": "19420103-000007",
-	    "ssid": "PREDICA",
-	    "isConnected": 1,
-	    "softwareVersions": [
-	        {
-	            "softwareType": 0,
-	            "version": "2.2.13357"
-	        },
-	        {
-	            "softwareType": 1,
-	            "version": "4.13.0.2"
-	        }
-	    ]
-	}
+Each response contains an HTTP code that informs about the status of the request processing and optional body in **JSON** format.
 
 ### Response message headers
 
@@ -165,42 +76,6 @@ Here's a list of most important headers returned in Tedee Local API responses:
 * **Date** - includes date and time when the messages was sent
 * **Server** - Server name, ``Tedee`` in all cases
 
-
-### Example response
-
-Below is an example response for the Bridge Info request:
-
-* HTTP status code - ``200``
-* Response body:
-
-		{
-		    "name": "My Bridge",
-		    "currentTime": "2023-09-23T14:59:59.660Z",
-		    "serialNumber": "19420103-000007",
-		    "ssid": "PREDICA",
-		    "isConnected": 1,
-		    "softwareVersions": [
-		        {
-		            "softwareType": 0,
-		            "version": "2.2.13357-dev"
-		        },
-		        {
-		            "softwareType": 1,
-		            "version": "4.13.0.2"
-		        }
-		    ]
-		}
-
-* Response headers:
-
-		Server: Tedee
-		Content-Type: application/json
-		Content-Length: 237
-		Date: Sat, 23 Sep 2023 14:59:59 GMT
-		Access-Control-Allow-Methods: GET, POST, DELETE, PUT, PATCH, OPTIONS
-		Access-Control-Allow-Headers: Content-Type, api_token
-		Access-Control-Allow-Credentials: true
-		Access-Control-Allow-Origin: *
 
 		
 ## What's next?

@@ -40,12 +40,6 @@
       }
     },
     {
-      "name": "Logo guideliness",
-      "description": {
-        "$ref" : "overview/logo_guideliness.md"
-      }
-    },
-    {
       "name": "Release notes",
       "description": {
         "$ref" : "overview/release_notes.md"
@@ -100,7 +94,6 @@
       "tags": [
         "Getting started",
         "API versioning",
-        "Logo guidelines",
         "Release notes"
       ]
     },

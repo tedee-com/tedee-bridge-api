@@ -8,7 +8,7 @@ Welcome to the Tedee Bridge API, specifically designed to operate within your lo
 
 - **Callbacks:** The Tedee Bridge API offers callbacks to keep your integration updated on device status changes or other important events.
 
-- **Rate Limiting:** Be mindful of the rate at which you send requests; sending them too quickly can adversely affect performance.
+- **Rate Limiting:** Be mindful of the rate at which you send requests; sending them too quickly can adversely affect performance. 1 request per second should be the max.
 
 ## Enabling Bridge API
 

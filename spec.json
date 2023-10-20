@@ -13,7 +13,7 @@
     {
       "url": "/v1.0"
     }
-  ],  
+  ],
   "tags": [
     {
       "name": "Bridge",
@@ -30,61 +30,55 @@
     {
       "name": "Getting started",
       "description": {
-        "$ref" : "overview/getting_started.md"
+        "$ref": "overview/getting_started.md"
       }
     },
     {
       "name": "API versioning",
       "description": {
-        "$ref" : "overview/api_versioning.md"
+        "$ref": "overview/api_versioning.md"
       }
     },
     {
       "name": "Release notes",
       "description": {
-        "$ref" : "overview/release_notes.md"
-      }
-    },
-    {
-      "name": "Begin integration",
-      "description": {
-        "$ref" : "howtos/begin_integration.md"
+        "$ref": "overview/release_notes.md"
       }
     },
     {
       "name": "Authenticate",
       "description": {
-        "$ref" : "howtos/authenticate.md"
+        "$ref": "howtos/authenticate.md"
       }
     },
     {
       "name": "Get and sync locks",
       "description": {
-        "$ref" : "howtos/get_and_sync_locks.md"
+        "$ref": "howtos/get_and_sync_locks.md"
       }
     },
     {
       "name": "Operate locks",
       "description": {
-        "$ref" : "howtos/operate_locks.md"
+        "$ref": "howtos/operate_locks.md"
       }
     },
     {
       "name": "About webhooks",
       "description": {
-        "$ref" : "webhooks/about_webhooks.md"
+        "$ref": "webhooks/about_webhooks.md"
       }
     },
     {
       "name": "Webhook events",
       "description": {
-        "$ref" : "webhooks/events.md"
+        "$ref": "webhooks/events.md"
       }
     },
     {
       "name": "Useful links",
       "description": {
-        "$ref" : "more.md"
+        "$ref": "more.md"
       }
     }
   ],
@@ -100,7 +94,6 @@
     {
       "name": "HOW TO ...",
       "tags": [
-        "Begin integration",
         "Authenticate",
         "Get and sync locks",
         "Operate locks"
@@ -342,7 +335,12 @@
             "description": "Unlock mode:<br><br>0 - (or no parameter set) - Normal. From close position: unlock only or unlock with auto pull if enabled. From open position: nothing.<br>2 - Force. Force movement until lock hits resistance.<br>3 - Without Pull. From close position: unlock only without auto pull. From open position: nothing.<br>4 - Unlock or Pull. From close position: unlock only or unlock with auto pull if enabled. From open position: pull.",
             "schema": {
               "type": "integer",
-              "enum":[0,2,3,4],
+              "enum": [
+                0,
+                2,
+                3,
+                4
+              ],
               "format": "int32"
             }
           }
@@ -798,7 +796,6 @@
               2
             ]
           },
-
           "error-description": {
             "type": "string",
             "examples": [
@@ -839,14 +836,13 @@
               "Bridge-8C14"
             ]
           },
-          "currentTime":{
+          "currentTime": {
             "type": "string",
             "description": "Bridge current date & time in UTC format",
             "examples": [
               "2023-07-25T14:41:48.825Z"
             ]
           },
-          
           "serialNumber": {
             "type": "string",
             "description": "Serial Number",
@@ -863,7 +859,10 @@
           },
           "isConnected": {
             "type": "integer",
-            "enum": [0,1],
+            "enum": [
+              0,
+              1
+            ],
             "description": "0 - disconnected, 1 - connected",
             "examples": [
               1
@@ -905,7 +904,10 @@
           },
           "type": {
             "type": "integer",
-            "enum": [2,4],
+            "enum": [
+              2,
+              4
+            ],
             "description": "Lock type: 2 - Lock PRO, 4 - Lock GO",
             "examples": [
               4
@@ -920,7 +922,10 @@
           },
           "isConnected": {
             "type": "integer",
-            "enum": [0,1],
+            "enum": [
+              0,
+              1
+            ],
             "description": "0 - disconnected, 1 - connected",
             "examples": [
               1
@@ -952,7 +957,19 @@
           "state": {
             "type": "integer",
             "description": "Lock state: 0-uncalibrated, 1-calibration, 2-open, 3-partially_open, 4-opening, 5-closing, 6-closed, 7-pull_spring, 8-pulling, 9-unknown, 255-unpulling",
-            "enum": [0,1,2,3,4,5,6,7,8,9,255],
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              255
+            ],
             "examples": [
               6
             ]
@@ -960,7 +977,10 @@
           "jammed": {
             "type": "integer",
             "description": "0-not jammed, 1-jammed",
-            "enum": [0,1],
+            "enum": [
+              0,
+              1
+            ],
             "examples": [
               0
             ]
@@ -976,7 +996,10 @@
           "isCharging": {
             "type": "integer",
             "description": "0-not charging, 1-charging",
-            "enum": [0,1],
+            "enum": [
+              0,
+              1
+            ],
             "examples": [
               0
             ]
@@ -986,7 +1009,10 @@
             "properties": {
               "autoLockEnabled": {
                 "type": "integer",
-                "enum": [0,1],
+                "enum": [
+                  0,
+                  1
+                ],
                 "description": "Auto lock: 0-disabled, 1-enabled",
                 "examples": [
                   0
@@ -1001,7 +1027,10 @@
               },
               "autoLockImplicitEnabled": {
                 "type": "integer",
-                "enum": [0,1],
+                "enum": [
+                  0,
+                  1
+                ],
                 "description": "Implicit Auto Lock: 0-disabled, 1-enabled",
                 "examples": [
                   0
@@ -1016,7 +1045,10 @@
               },
               "pullSpringEnabled": {
                 "type": "integer",
-                "enum": [0,1],
+                "enum": [
+                  0,
+                  1
+                ],
                 "description": "Pull Spring: 0-disabled, 1-enabled",
                 "examples": [
                   0
@@ -1031,7 +1063,10 @@
               },
               "autoPullSpringEnabled": {
                 "type": "integer",
-                "enum": [0,1],
+                "enum": [
+                  0,
+                  1
+                ],
                 "description": "Auto Pull Spring: 0-disabled, 1-enabled",
                 "examples": [
                   0
@@ -1039,7 +1074,10 @@
               },
               "postponedLockEnabled": {
                 "type": "integer",
-                "enum": [0,1],
+                "enum": [
+                  0,
+                  1
+                ],
                 "description": "Postponed lock: 0-disabled, 1-enabled",
                 "examples": [
                   1
@@ -1054,7 +1092,10 @@
               },
               "buttonLockEnabled": {
                 "type": "integer",
-                "enum": [0,1],
+                "enum": [
+                  0,
+                  1
+                ],
                 "description": "Lock by button: 0-disabled, 1-enabled",
                 "examples": [
                   1
@@ -1062,7 +1103,10 @@
               },
               "buttonUnlockEnabled": {
                 "type": "integer",
-                "enum": [0,1],
+                "enum": [
+                  0,
+                  1
+                ],
                 "description": "Unlock by button: 0-disabled, 1-enabled",
                 "examples": [
                   1
@@ -1091,8 +1135,9 @@
           },
           "headers": {
             "type": "array",
-            "items": 
-              {"$ref": "#/components/schemas/CallbackHeader"}
+            "items": {
+              "$ref": "#/components/schemas/CallbackHeader"
+            }
           }
         }
       },
@@ -1108,8 +1153,9 @@
           },
           "headers": {
             "type": "array",
-            "items": 
-              {"$ref": "#/components/schemas/CallbackHeader"}
+            "items": {
+              "$ref": "#/components/schemas/CallbackHeader"
+            }
           }
         }
       },
@@ -1141,7 +1187,7 @@
         "in": "path",
         "description": "Callback server (webhook) ID",
         "required": true,
-        "schema" : {
+        "schema": {
           "type": "integer",
           "format": "int32"
         }
@@ -1153,8 +1199,8 @@
         "name": "api_token",
         "in": "header",
         "description": {
-        	"$ref" : "overview/security_schema.md"
-      	}
+          "$ref": "overview/security_schema.md"
+        }
       }
     }
   }

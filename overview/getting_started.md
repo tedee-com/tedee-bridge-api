@@ -14,7 +14,7 @@ Welcome to the Tedee Bridge API, specifically designed to operate within your lo
 
 Before you can use the API you must enable it on the Bridge using Tedee mobile application. Open Tedee app and go to selected Bridge -> Settings -> Local API -> then toggle the switch button.  
 
-![Enabling Local API in the mobile app](/overview/images/enable_api.png "Enabling Local API in the mobile app")  
+![Enabling Bridge API in the mobile app](/overview/images/enable_api.png "Enabling Bridge API in the mobile app")  
 
 Available options:
 
@@ -30,13 +30,13 @@ Available options:
 
 ## REST API request
 
-To interact with the Tedee Local API, you send HTTP requests that use a supported method: GET, POST, or DELETE. POST request body and server responses are sent in JSON payloads.
+To interact with the Tedee Bridge API, you send HTTP requests that use a supported method: GET, POST, or DELETE. POST request body and server responses are sent in JSON payloads.
 
 The path URL resource names and query parameters are case sensitive. Moreover, the values you assign, entity IDs, and other base64 encoded values are also case sensitive.
 
 ### Request message URI
 
-All Tedee Local API requests use the following URL format:
+All requests to Tedee Bridge API use the following URL format:
 
 ``http://{bridge IP}/{version}/{resource}`` 
 
@@ -53,7 +53,7 @@ Some requests require additional meta data sent in the headers, which helps to p
 
 ### Architecture
 
-Tedee Local API is based on REST architecture. This implies that the application does not store any state.  
+Tedee Bridge API is based on REST architecture. This implies that the application does not store any state.  
 Hence, the client session can not be handled on the server (Bridge) side, every request must provide all the information needed.  
 
 ### Example request
@@ -69,7 +69,7 @@ Each response contains an HTTP code that informs about the status of the request
 
 ### Response message headers
 
-Here's a list of most important headers returned in Tedee Local API responses:
+Here's a list of most important headers returned in Tedee Bridge API responses:
 
 * **Content-Length** - size of the response body
 * **Content-Type** - indicates the media type of the resource, ``application/json`` in all cases

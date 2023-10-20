@@ -1,3 +1,3 @@
 Visit the following links for details:
 * [How to: Authenticate](/#tag/Authenticate)
-* [Overview: Enabling Local API](/#tag/Getting-started/Enabling-Local-API-and-authentication)
+* [Overview: Enabling Bridge API](/#tag/Getting-started/Enabling-Bridge-API)

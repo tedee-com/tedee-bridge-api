@@ -18,7 +18,7 @@ Before you can use the API you must enable it on the Bridge using Tedee mobile a
 
 Available options:
 
-- **Encrypted Token:** Allows you to toggle between secure and insecure authentication methods. For more details, refer to the [Authentication](/#tag/authenticate) section.
+- **Encrypted Token:** Allows you to toggle between secure and insecure authentication methods. For more details, refer to the [Authentication](#tag/authenticate) section.
   
 - **Token:** This is the actual token that must be included in every API request for authentication, functioning similarly to a password, so keep it secure.
 
@@ -75,14 +75,3 @@ Here's a list of most important headers returned in Tedee Local API responses:
 * **Content-Type** - indicates the media type of the resource, ``application/json`` in all cases
 * **Date** - includes date and time when the messages was sent
 * **Server** - Server name, ``Tedee`` in all cases
-
-
-		
-## What's next?
-
-Here's a list of example actions that you can do using the API:
-
-* Get device details
-* Read lock state
-* Lock, unlock or pull spring
-

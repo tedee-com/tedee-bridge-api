@@ -9,8 +9,7 @@ The type of token used by the Bridge API can be selected via the mobile app:
 
 ![Selecting API Token type](/howtos/images/token_plain.png "Selecting API Token type")  
 
-Depends on the selected type of API token, a relevant ``api_key`` value must be generated and passed as a query or header parameter.  
-See [Overview: Enabling Bridge API](/#tag/Getting-started/Enabling-Bridge-API) for details.
+Depends on the selected type of API token, a relevant ``api_key`` value must be generated and passed as a query or header parameter.
 
 ## Encrypted Token
 This type of token provides sufficient security level to the system:
@@ -48,7 +47,7 @@ Let's say the ``token`` is:
 		e59d9763edc6e59f2faccf9a769e5cf170d68439c3fd67afae5e3e72d0463a711691058833000
 
 4. Done!  
-The last string you received is your ``api_key`` value. To make sure everything works, try to use it in [Postman](https://www.postman.com) as described here: [Overview: Enabling Bridge API and authentication](/#tag/Getting-started/Enabling-Bridge-API)
+The last string you received is your ``api_key`` value.
 
 ## Plain Token
 This type of token **does not** provide sufficient security level to the system and can be used <span style="color:red">**for development purposes only!**</span>:

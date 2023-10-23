@@ -58,8 +58,8 @@ Hence, the client session can not be handled on the server (Bridge) side, every 
 
 ### Example request
 
-Let's get some information about our devices now.
-Put this address ``http://192.168.1.25/v1.0/bridge`` in the `url` input and click **Send**.
+Let's get some information about our Bridge now.
+Put this address ``http://192.168.1.25/v1.0/bridge`` in your browser `url` and send it.
 
 	GET /v1.0/bridge?api_token=<<token>> HTTP/1.1
 	

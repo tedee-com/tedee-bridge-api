@@ -1,6 +1,4 @@
-**Note**  
-You should calibrate the lock before using these endpoints.  
-If you didn't calibrate the lock, these endpoints will return an error code indicating the lock is not calibrated.
+You should calibrate the lock before using these endpoints. If you didn't calibrate the lock, these endpoints will return an error code indicating the lock is not calibrated.
 
 You can perform following actions on lock:
 * [Lock](/#tag/Lock/operation/postLock)
@@ -11,9 +9,7 @@ Each action can be performed only in specific lock states. Here is Lock state di
   
 ![Lock states diagram](/howtos/images/lock-states-diagram.png "Lock states diagram")  
 
-Make sure the lock and bridge are connected.
-
-## Lock tedee lock
+## Lock Tedee lock
 
 To lock the device first make sure it is in unlocked or semi-locked state then send [Lock request](/#tag/Lock/operation/postLock).
 
@@ -32,7 +28,7 @@ The response is sent immediately after the locking action has started. The resul
 Also, please note that the locking action usually takes up to 3 seconds.
 
 
-## Unlock tedee lock
+## Unlock Tedee lock
 
 To unlock the device first make sure it is in locked or semi-locked state then send [Unlock request](/#tag/Lock/operation/postUnlock).
 

@@ -12,7 +12,7 @@ Welcome to the Tedee Bridge API, specifically designed to operate within your lo
 
 ## Enabling Bridge API
 
-Before you can use the API you must enable it on the Bridge using Tedee mobile application. Open Tedee app and go to selected Bridge -> Settings -> Local API -> then toggle the switch button.  
+Before you can use the API you must enable it on the Bridge using Tedee mobile application. Open Tedee app and go to selected Bridge -> Settings -> API -> then toggle the switch button.  
 
 ![Enabling Bridge API in the mobile app](/overview/images/enable_api.png "Enabling Bridge API in the mobile app")  
 

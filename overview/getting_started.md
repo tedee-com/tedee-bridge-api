@@ -1,3 +1,5 @@
+See on our ![](/assets/github-logo.svg "GitHub Logo") [GitHub repository](https://github.com/tedee-com/tedee-bridge-api/blob/master/overview/getting_started.md)
+
 Welcome to the Tedee Bridge API, specifically designed to operate within your local network. Here are some key points to get you started:
 
 - **Local Network:** The API functions over your local network, allowing your integrations to communicate directly with the Tedee Bridge without requiring external internet access for the API calls.

@@ -1,4 +1,4 @@
-See on our ![](/assets/github-logo.svg "GitHub Logo") [GitHub repository](https://github.com/tedee-com/tedee-bridge-api/blob/master/howtos/get_and_sync_locks.md)
+ (https://github.com/tedee-com/tedee-bridge-api/blob/master/howtos/get_and_sync_locks.md)
 
 For the purpose of this tutorial, let's assume that you possess one or more locks, and it is essential to retrieve their data initially and subsequently synchronize their states at regular intervals.
 

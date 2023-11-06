@@ -1,4 +1,4 @@
-See on our ![](/assets/github-logo.svg "GitHub Logo") [GitHub repository](https://github.com/tedee-com/tedee-bridge-api/blob/master/howtos/authenticate.md)
+ ![](/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/howtos/authenticate.md)
 
 Every request requires authentication token.
 The process of using/generating the authentication token is described below.  
@@ -14,7 +14,7 @@ The type of token used by the Bridge API can be selected via the mobile app:
 Depends on the selected type of API token, a relevant ``api_key`` value must be generated and passed as a query or header parameter.
 
 ## Encrypted Token 
-For more information or to report issues, visit our [GitHub repository](https://github.com/your-repo-path).
+For more information or to report issues, visit our [Github](https://github.com/your-repo-path).
 
 This type of token provides sufficient security level to the system:
 * every request (with a given ``api_key``) can be processed only once due to timestamp value embedded in the ``api_key`` value

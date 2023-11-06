@@ -1,4 +1,4 @@
-See on our ![](/assets/github-logo.svg "GitHub Logo") [GitHub repository](https://github.com/tedee-com/tedee-bridge-api/blob/master/overview/getting_started.md)
+ ![](/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/overview/getting_started.md)
 
 Welcome to the Tedee Bridge API, specifically designed to operate within your local network. Here are some key points to get you started:
 

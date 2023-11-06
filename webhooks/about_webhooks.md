@@ -1,4 +1,4 @@
-See on our ![](/assets/github-logo.svg "GitHub Logo") [GitHub repository](https://github.com/tedee-com/tedee-bridge-api/blob/master/webhooks/about_webhooks.md)
+ ![](/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/webhooks/about_webhooks.md)
 
 From an integration perspective, it is crucial to keep device information up to date.  
 Webhook notifications solve this problem by automatically sending updates when changes happen. This eliminates the need to periodically send requests to the Tedee Bridge API to refresh devices. 

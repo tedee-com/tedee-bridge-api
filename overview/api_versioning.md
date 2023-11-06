@@ -1,4 +1,4 @@
-See on our ![](/assets/github-logo.svg "GitHub Logo") [GitHub repository](https://github.com/tedee-com/tedee-bridge-api/blob/master/overview/api_versioning.md)
+ ![](/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/overview/api_versioning.md)
 
 Tedee Bridge API is versioned, which allows us to develop and provide new functionalities while keeping backwards compatibility. This ensures that even when a breaking change happens, other services will still be able to work with the API the same way they did.  
 

@@ -3,6 +3,11 @@
   "info": {
     "title": "Tedee Bridge API",
     "description": "The API is exposed by Tedee Bridge over HTTP and allows you to control paired devices in your local network.",
+    "x-logo": {
+      "url": "./assets/main_logo.svg",
+      "backgroundColor": "#FFFFFF",
+      "altText": "Example logo"
+    },
     "contact": {
       "email": "support@tedee.com",
       "name": "us"

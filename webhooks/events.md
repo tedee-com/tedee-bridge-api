@@ -1,3 +1,5 @@
+ ![](/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/webhooks/events.md)
+
 All webhook request bodies has very similar JSON structure which consists of:
 - **event** - an unique event name
 - **timestamp** - the date and time of the event in the UTC format

@@ -1,18 +1,20 @@
  ![](/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/webhooks/events.md)
 
-All webhook request bodies has very similar JSON structure which consists of:
+All webhook request bodies configured as "POST" in the method name, has very similar JSON structure which consists of:
 - **event** - an unique event name
 - **timestamp** - the date and time of the event in the UTC format
 - **data** - the data object specific to the event type/name
 
-See the list of available webhook events below.
+For webhooks configured as "GET" in the method name, there are no content bodies and all values are passed as "query string" parameters.
+
+See the list of available webhook events and examples below.
   
 
 ## Backend connection changed
 
 Occures when Tedee Bridge gets or looses connection to Tedee Cloud.
 
-**Request body**
+**Request body for POST method**
 
 	{
 	  "event": "backend-connection-changed",
@@ -21,6 +23,10 @@ Occures when Tedee Bridge gets or looses connection to Tedee Cloud.
 	    "isConnected": 1
 	  }
 	}
+
+**Request for GET method**
+
+	<<YOUR_WEBHOOK_URL>>?event=backend-connection-changed&timestamp=2023-07-25T14:41:48.825Z&isConnected=1
 	
 The ``isConnected`` field may have the following values:
 - 0 - disconnected
@@ -32,7 +38,7 @@ The ``isConnected`` field may have the following values:
 
 Occures when Tedee Lock gets or looses connection to the Bridge.
 
-**Request body**
+**Request body for POST method**
 
 	{
 	  "event": "device-connection-changed",
@@ -44,6 +50,10 @@ Occures when Tedee Lock gets or looses connection to the Bridge.
 	    "isConnected": 1
 	  }
 	}
+
+**Request for GET method**
+
+	<<YOUR_WEBHOOK_URL>>?event=device-connection-changed&timestamp=2023-07-25T14:41:48.825Z&deviceType=2&deviceId=33819&serialNumber=19420103-000006&isConnected=1
 
 The ``deviceType`` field may have the following values:
 - 2 for Lock PRO 
@@ -57,7 +67,7 @@ The ``isConnected`` field may have the following values:
 
 Occures when settings has changed for Tedee Lock.
 
-**Request body**
+**Request body for POST method**
 
 	{
 	  "event": "device-settings-changed",
@@ -69,6 +79,10 @@ Occures when settings has changed for Tedee Lock.
 	  }
 	}
 	
+**Request for GET method**
+
+	<<YOUR_WEBHOOK_URL>>?event=device-settings-changed&timestamp=2023-07-25T14:41:48.825Z&deviceType=2&deviceId=33819&serialNumber=19420103-000006
+
 The ``deviceType`` field may have the following values:
 - 2 for Lock PRO 
 - 4 for Lock GO. 
@@ -78,7 +92,7 @@ The ``deviceType`` field may have the following values:
 
 Occures when Tedee Lock status has changed
 
-**Request body**
+**Request body for POST method**
 
 	{
 	  "event": "lock-status-changed",
@@ -92,6 +106,10 @@ Occures when Tedee Lock status has changed
 	  }
 	}
 	
+**Request for GET method**
+
+	<<YOUR_WEBHOOK_URL>>?event=lock-status-changed&timestamp=2023-07-25T14:41:48.825Z&deviceType=2&deviceId=33819&serialNumber=19420103-000006&state=6&jammed=0
+
 The ``deviceType`` field may have the following values:
 - 2 for Lock PRO 
 - 4 for Lock GO. 
@@ -117,7 +135,7 @@ The ``jammed`` field may have the following values:
 
 Occures when Tedee Lock battery level changes
 
-**Request body**
+**Request body for POST method**
 
 	{
 	  "event": "device-battery-level-changed",
@@ -129,6 +147,10 @@ Occures when Tedee Lock battery level changes
 	    "batteryLevel": 90
 	  }
 	}
+
+**Request for GET method**
+
+	<<YOUR_WEBHOOK_URL>>?event=device-battery-level-changed&timestamp=2023-07-25T14:41:48.825Z&deviceType=2&deviceId=33819&serialNumber=19420103-000006&batteryLevel=90
 
 The ``deviceType`` field may have the following values:
 - 2 for Lock PRO 
@@ -143,7 +165,7 @@ The ``batteryLevel`` field may have the following values:
 
 Occures when Tedee Lock (PRO) starts charging
 
-**Request body**
+**Request body for POST method**
 
 	{
 	  "event": "device-battery-start-charging",
@@ -155,6 +177,10 @@ Occures when Tedee Lock (PRO) starts charging
 	  }
 	}
 	
+**Request for GET method**
+
+	<<YOUR_WEBHOOK_URL>>?event=device-battery-start-charging&timestamp=2023-07-25T14:41:48.825Z&deviceType=2&deviceId=33819&serialNumber=19420103-000006
+	
 The ``deviceType`` field may have the following values:
 - 2 for Lock PRO 
 - 4 for Lock GO. 
@@ -163,7 +189,7 @@ The ``deviceType`` field may have the following values:
 
 Occures when Tedee Lock (PRO) stops charging
 
-**Request body**
+**Request body for POST method**
 
 	{
 	  "event": "device-battery-stop-charging",
@@ -175,6 +201,10 @@ Occures when Tedee Lock (PRO) stops charging
 	  }
 	}
 
+**Request for GET method**
+
+	<<YOUR_WEBHOOK_URL>>?event=device-battery-stop-charging&timestamp=2023-07-25T14:41:48.825Z&deviceType=2&deviceId=33819&serialNumber=19420103-000006
+
 The ``deviceType`` field may have the following values:
 - 2 for Lock PRO 
 - 4 for Lock GO. 
@@ -183,7 +213,7 @@ The ``deviceType`` field may have the following values:
 
 Occures when Tedee Lock (PRO) is fully charged
 
-**Request body**
+**Request body for POST method**
 
 	{
 	  "event": "device-battery-fully-charged",
@@ -194,6 +224,10 @@ Occures when Tedee Lock (PRO) is fully charged
 	    "serialNumber": "19420103-000006"
 	  }
 	}
+
+**Request for GET method**
+
+	<<YOUR_WEBHOOK_URL>>?event=device-battery-fully-charged&timestamp=2023-07-25T14:41:48.825Z&deviceType=2&deviceId=33819&serialNumber=19420103-000006
 
 The ``deviceType`` field may have the following values:
 - 2 for Lock PRO 

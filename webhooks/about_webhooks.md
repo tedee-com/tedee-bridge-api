@@ -9,6 +9,6 @@ Webhooks feature is designed for integrations having the ability to configure th
 **Note:**  
 Remember that the lock must be paired with the bridge to track changes in real time and have the webhooks configured properly.  
   
-Once the webhook for your integration is configured, the Tedee Bridge will send POST request to that URL when any change on the device connected to your Bridge will occur.  
+Once the webhook for your integration is configured, the Tedee Bridge will send request (POST or GET - depends on the configuration) to that URL when any change on the device connected to your Bridge will occur.  
 
 Tedee Bridge sends request to all configured webhooks separately, for each device independently.  

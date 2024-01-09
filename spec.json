@@ -1137,6 +1137,13 @@
               "http://192.168.1.21:8080/events"
             ]
           },
+          "method": {
+            "type": "string",
+            "description": "POST or GET",
+            "examples": [
+              "POST"
+            ]
+          },
           "headers": {
             "type": "array",
             "items": {
@@ -1153,6 +1160,13 @@
             "description": "Callback URL",
             "examples": [
               "http://192.168.1.21:8080/events"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "description": "POST or GET",
+            "examples": [
+              "POST"
             ]
           },
           "headers": {

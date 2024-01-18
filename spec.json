@@ -542,8 +542,15 @@
           "required": true
         },
         "responses": {
-          "204": {
-            "description": "Successful operation (NO CONTENT)"
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                    "$ref": "#/components/schemas/CallbackIDsingle"
+                }
+              }
+            }
           },
           "401": {
             "description": "unauthorized",
@@ -604,8 +611,18 @@
           "required": true
         },
         "responses": {
-          "204": {
-            "description": "Successful operation (NO CONTENT)"
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CallbackIDlist"
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "unauthorized",
@@ -1187,6 +1204,24 @@
             ]
           }
         }
+      },
+      "CallbackIDsingle": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "CallbackIDlist": {
+        "type": "integer",
+        "examples": [
+          1
+        ]
       }
     },
     "parameters": {

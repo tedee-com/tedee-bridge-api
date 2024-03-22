@@ -1,6 +1,14 @@
 {
   "routes": [
     {
+      "route": "/bridge-api/BingSiteAuth.xml",
+      "rewrite": "/sitemap/BingSiteAuth.xml"
+    },
+    {
+      "route": "/bridge-api/sitemap.xml",
+      "rewrite": "/sitemap/sitemap.xml"
+    },
+    {
       "route": "/bridge-api",
       "rewrite": "/index.html"
     },

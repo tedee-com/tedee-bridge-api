@@ -94,10 +94,19 @@
         .property-name {
             font-size: 16px !important;
         }
+
+        .title-for-index {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0;
+        }
     </style>
 </head>
 
 <body>
+    <h1 class="title-for-index">Tedee Bridge API</h1>
     <redoc spec-url='spec.json'></redoc>
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
 </body>

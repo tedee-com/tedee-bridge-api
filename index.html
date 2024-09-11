@@ -15,6 +15,8 @@
     <title>Tedee Bridge API</title>
     <!-- Needed for adaptive design -->
     <meta charset="utf-8" />
+    <meta name="description" content="
+    Documentation of Tedee Bridge Local API that allows you to write integration with Tedee devices within you local network." />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
 
@@ -92,12 +94,21 @@
         .property-name {
             font-size: 16px !important;
         }
+
+        .title-for-index {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0;
+        }
     </style>
 </head>
 
 <body>
+    <h1 class="title-for-index">Tedee Bridge API</h1>
     <redoc spec-url='spec.json'></redoc>
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    <script src="./redoc.standalone.js"> </script>
 </body>
 
 </html>

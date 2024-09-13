@@ -1156,7 +1156,7 @@
           },
           "method": {
             "type": "string",
-            "description": "POST or GET",
+            "description": "POST, GET or GET+NO_PARAMS",
             "examples": [
               "POST"
             ]
@@ -1181,7 +1181,7 @@
           },
           "method": {
             "type": "string",
-            "description": "POST or GET",
+            "description": "POST, GET or GET+NO_PARAMS",
             "examples": [
               "POST"
             ]

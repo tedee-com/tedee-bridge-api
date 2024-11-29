@@ -13,6 +13,10 @@
       "rewrite": "/index.html"
     },
     {
+      "route": "/dry-contact",
+      "rewrite": "/dry-contact/index.html"
+    },
+    {
       "route": "/",
       "redirect" : "/bridge-api"
     }

@@ -4,7 +4,7 @@
     "title": "Tedee Bridge API",
     "description": "The API is exposed by Tedee Bridge over HTTP and allows you to control paired devices in your local network.",
     "x-logo": {
-      "url": "./assets/main_logo.svg",
+      "url": "./bridge-api/assets/main_logo.svg",
       "altText": "Example logo"
     },
     "contact": {
@@ -34,55 +34,55 @@
     {
       "name": "Getting started",
       "description": {
-        "$ref": "overview/getting_started.md"
+        "$ref": "/bridge-api/overview/getting_started.md"
       }
     },
     {
       "name": "API versioning",
       "description": {
-        "$ref": "overview/api_versioning.md"
+        "$ref": "/bridge-api/overview/api_versioning.md"
       }
     },
     {
       "name": "Release notes",
       "description": {
-        "$ref": "overview/release_notes.md"
+        "$ref": "/bridge-api/overview/release_notes.md"
       }
     },
     {
       "name": "Authenticate",
       "description": {
-        "$ref": "howtos/authenticate.md"
+        "$ref": "/bridge-api/howtos/authenticate.md"
       }
     },
     {
       "name": "Get and sync locks",
       "description": {
-        "$ref": "howtos/get_and_sync_locks.md"
+        "$ref": "/bridge-api/howtos/get_and_sync_locks.md"
       }
     },
     {
       "name": "Operate locks",
       "description": {
-        "$ref": "howtos/operate_locks.md"
+        "$ref": "/bridge-api/howtos/operate_locks.md"
       }
     },
     {
       "name": "About webhooks",
       "description": {
-        "$ref": "webhooks/about_webhooks.md"
+        "$ref": "/bridge-api/webhooks/about_webhooks.md"
       }
     },
     {
       "name": "Webhook events",
       "description": {
-        "$ref": "webhooks/events.md"
+        "$ref": "/bridge-api/webhooks/events.md"
       }
     },
     {
       "name": "Useful links",
       "description": {
-        "$ref": "more.md"
+        "$ref": "/bridge-api/more.md"
       }
     }
   ],

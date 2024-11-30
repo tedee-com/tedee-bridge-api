@@ -1,0 +1,1 @@
+ ![](/bridge-api/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/overview/release_notes.md)

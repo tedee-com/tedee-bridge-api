@@ -1,4 +1,4 @@
- ![](/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/howtos/operate_locks.md)
+ ![](/bridge-api/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/howtos/operate_locks.md)
 
 You should calibrate the lock before using these endpoints. If you didn't calibrate the lock, these endpoints will return an error code indicating the lock is not calibrated.
 
@@ -9,7 +9,7 @@ You can perform following actions on lock:
 
 Each action can be performed only in specific lock states. Here is Lock state diagram:  
   
-![Lock states diagram](/howtos/images/lock-states-diagram.png "Lock states diagram")  
+![Lock states diagram](/bridge-api/howtos/images/lock-states-diagram.png "Lock states diagram")  
 
 ## Lock Tedee lock
 

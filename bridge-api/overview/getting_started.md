@@ -1,4 +1,4 @@
- ![](/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/overview/getting_started.md)
+ ![](/bridge-api/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/overview/getting_started.md)
 
 Welcome to the Tedee Bridge API, specifically designed to operate within your local network. Here are some key points to get you started:
 
@@ -16,7 +16,7 @@ Welcome to the Tedee Bridge API, specifically designed to operate within your lo
 
 Before you can use the API you must enable it on the Bridge using Tedee mobile application. Open Tedee app and go to selected Bridge -> Settings -> API -> then toggle the switch button.  
 
-![Enabling Bridge API in the mobile app](/overview/images/enable_api.png "Enabling Bridge API in the mobile app")  
+![Enabling Bridge API in the mobile app](/bridge-api/overview/images/enable_api.png "Enabling Bridge API in the mobile app")  
 
 Available options:
 

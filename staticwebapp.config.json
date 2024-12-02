@@ -9,14 +9,6 @@
       "rewrite": "/sitemap/sitemap.xml"
     },
     {
-      "route": "/bridge-api",
-      "rewrite": "/index.html"
-    },
-    {
-      "route": "/dry-contact",
-      "rewrite": "/dry-contact/index.html"
-    },
-    {
       "route": "/",
       "redirect" : "/bridge-api"
     }

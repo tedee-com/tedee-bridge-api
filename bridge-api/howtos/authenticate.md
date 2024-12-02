@@ -1,4 +1,4 @@
- ![](/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/howtos/authenticate.md)
+ ![](/bridge-api/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/howtos/authenticate.md)
 
 Every request requires authentication token.
 The process of using/generating the authentication token is described below.  
@@ -9,7 +9,7 @@ Bare in mind there are **two types** of Authentication Tokens:
 
 The type of token used by the Bridge API can be selected via the mobile app:
 
-![Selecting API Token type](/howtos/images/token_plain.png "Selecting API Token type")  
+![Selecting API Token type](/bridge-api/howtos/images/token_plain.png "Selecting API Token type")  
 
 Depends on the selected type of API token, a relevant ``api_key`` value must be generated and passed as a query or header parameter.
 
@@ -77,7 +77,7 @@ Follow the steps described below if you want to do so.
 
 1. Go to Environments -> Globals and add 3 variables:  
 
-![Set Postman global variables](/howtos/images/postman_auto_globals.png "Set Postman global variables")
+![Set Postman global variables](/bridge-api/howtos/images/postman_auto_globals.png "Set Postman global variables")
 - **API_TOKEN** - set the current value of Tedee Bridge API ``token``. For example:
 
 		BE9xnPnGfVUS
@@ -96,12 +96,12 @@ Follow the steps described below if you want to do so.
 		    console.log("Set variable API_KEY: " + pm.globals.get("API_KEY") + " (original token: " + token + " timestamp: " + timestamp + " sha256: " + hash + ")");
 		};
 2. Go to a selected endpoint -> Pre-request script tab and enter the following line:
-	![Set Pre-request script](/howtos/images/postman_auto_pre.png "Set Pre-request script")	
+	![Set Pre-request script](/bridge-api/howtos/images/postman_auto_pre.png "Set Pre-request script")	
 
 		eval(pm.globals.get('SECURE_TOKEN_SCRIPT'));
 	
 3. Go to a selected endpoint -> Authorization tab and enter "{{API_KEY}}" into the value text field as shown below:
-	![Set api_key value](/howtos/images/postman_auto_auth.png "Set api_key value")	
+	![Set api_key value](/bridge-api/howtos/images/postman_auto_auth.png "Set api_key value")	
 
 4. Done.  
 	Now you can send requests with encrypted token mode without the need of manual calculation every time!

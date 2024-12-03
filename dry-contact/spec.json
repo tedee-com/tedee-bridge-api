@@ -1,0 +1,46 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Dry Contact Script",
+    "description": "Dry Contact script language structure, allows configuration of inputs and outputs.",
+    "x-logo": {
+      "url": "/assets/main_logo.svg",
+      "altText": "Example logo"
+    }
+  },
+  "tags": [
+    {
+      "name": "Getting started",
+      "description": {
+        "$ref": "overview/getting_started.md"
+      }
+    },
+    {
+      "name": "Predefined configs",
+      "description": {
+        "$ref": "overview/predefined_config.md"
+      }
+    },
+    {
+      "name": "Useful links",
+      "description": {
+        "$ref": "more.md"
+      }
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "OVERVIEW",
+      "tags": [
+        "Getting started",
+        "Predefined configs"
+      ]
+    },
+    {
+      "name": "MORE",
+      "tags": [
+        "Useful links"
+      ]
+    }
+  ]
+}

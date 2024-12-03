@@ -1,0 +1,2 @@
+- [Forum](https://tedee.freshdesk.com/en/support/discussions)
+- [Tedee](https://tedee.com/)

@@ -1,3 +1,5 @@
+const baseHref = window.location.origin;
+
 const linksConfig = [
     {
         name: 'Cloud API Documentation',
@@ -11,12 +13,12 @@ const linksConfig = [
     },
     {
         name: 'Tedee Bridge API Documentation',
-        link: 'https://docs.tedee.com/bridge-api',
+        link: `${baseHref}/bridge-api`,
         description: 'The Bridge API documentation provides information on using the Tedee Bridge to connect and control Tedee smart locks in your local network.'
     },
     {
         name: 'Tedee Dry Contact Script Documentation',
-        link: 'https://docs.tedee.com/dry-contact',
+        link: `${baseHref}/dry-contact`,
         description: 'This documentation provides instructions for custom configuring the Tedee dry contact by creating your own configuration file. The Tedee dry contact connects to an existing wired system, enabling wireless control of the Tedee lock using wired signals.'
     },
     {

@@ -42,13 +42,31 @@ p {
 
 .documentation-link {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
     position: relative;
     padding: 1rem 1.5rem;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.07);
+}
+
+.documentation-link .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    min-height: 3rem;
+    max-height: 3rem;
+    min-width: 3rem;
+    max-width: 3rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+.documentation-link .icon svg {
+    max-height: 70%;
+    max-width: 70%;
+    color: var(--color-midnight-blue-500);
 }
 
 .documentation-link a {
@@ -73,6 +91,12 @@ p {
     flex-direction: column;
     margin: 0 auto;
     padding: 0 1rem;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 @media (min-width: 576px) {

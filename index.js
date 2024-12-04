@@ -56,7 +56,6 @@ const createRedirectLinkElement = (item) => {
     const linkRedirectElement = document.createElement('a');
     linkRedirectElement.textContent = item.name;
     linkRedirectElement.href = item.link;
-    linkRedirectElement.target = '_blank';
     return linkRedirectElement;
 }
 

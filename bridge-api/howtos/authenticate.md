@@ -1,4 +1,4 @@
- ![](/bridge-api/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-bridge-api/blob/master/howtos/authenticate.md)
+ ![](/assets/github-logo.svg "GitHub Logo") [Edit on Github](https://github.com/tedee-com/tedee-documentation/blob/master/bridge-api/howtos/authenticate.md)
 
 Every request requires authentication token.
 The process of using/generating the authentication token is described below.  

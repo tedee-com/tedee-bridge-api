@@ -17,7 +17,7 @@ const linksConfig = [
     {
         name: 'Tedee Dry Contact Script Documentation',
         link: 'https://docs.tedee.com/dry-contact',
-        description: ''
+        description: 'This documentation provides instructions for custom configuring the Tedee dry contact by creating your own configuration file. The Tedee dry contact connects to an existing wired system, enabling wireless control of the Tedee lock using wired signals.'
     },
     {
         name: 'Android Mobile SDK Documentation',

@@ -2,6 +2,7 @@
 
 :root {
     --color-aqua-blue--500: #34CFFD;
+    --color-aqua-blue--600: #2AA6CA;
     --color-midnight-blue-500: #22345A;
     --color-midnight-blue-50: #F6F7F8;
 }
@@ -55,7 +56,7 @@ p {
     width: fit-content;
     font-size: 1.25rem;
     text-decoration: none;
-    color: var(--color-aqua-blue--500);
+    color: var(--color-aqua-blue--600);
     transition: 0.3s;
 }
 

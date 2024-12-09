@@ -21,7 +21,7 @@ The documentation is:
 
 ### How to start
 
-1. **Clone the Repository**: First, clone the repository to your local machine using `git clone https://github.com/tedee-com/tedee-bridge-api.git`.
+1. **Clone the Repository**: First, clone the repository to your local machine using `git clone https://github.com/tedee-com/tedee-documentation.git`.
 
 2. **Open Terminal**: Navigate to the root directory of this repository using your terminal or command prompt.
 
